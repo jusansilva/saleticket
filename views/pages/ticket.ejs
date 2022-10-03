@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron center">
+    <h1 style="text-align: center">Criar Ticket</h1>
+    <form>
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="nome" class="form-control" id="nome"  placeholder="Nome do cliente">
+      </div>
+      <div class="form-group">
+        <label for="documento">Documento</label>
+        <input type="text" class="form-control" id="documento" placeholder="Digite um documento de identificação">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de ingresso</label>
+        <select class="form-control" id="tipo">
+          <option>Pista</option>
+          <option>Camarote Individual</option>
+          <option>Camarote Mesa</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Criar</button>
+    </form>  
+  </div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
