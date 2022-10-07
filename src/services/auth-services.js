@@ -1,7 +1,13 @@
-module.exports.login = (req, res) => {
-  const { usuario, password } = req.body;
+var localStorage = require('store')
+const Manager = require("../db/model/ManagerModels");
 
-  if (password === "maeventos") {
+
+module.exports.login = async (req, res) => {
+  const { email, password } = req.body;
+
+  const find = await Manager.findOne({email,senha:password}) 
+
+  if (find) {
     const jwt = require("jsonwebtoken");
     const dadosUsuario = {
       nome: "marcos",
@@ -17,10 +23,11 @@ module.exports.login = (req, res) => {
 
         return;
       }
+      localStorage.set("token", token);
 
-      res.set({"authorization": token});
+      res.set("authorization", token);
       res.set("x-access-token", token);
-      res.redirect("/home");
+      res.redirect("/ticket");
     });
   } else {
     res.status(401);

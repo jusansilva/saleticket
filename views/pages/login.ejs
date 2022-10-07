@@ -36,14 +36,23 @@
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" method="post" action="/login">
               <input
-                type="password"
-                name="password"
-                id="password"
+                type="email"
+                name="email"
+                id="email"
                 class="form-control form-group"
-                placeholder="senha"
+                placeholder="email"
                 required
                 autofocus
               />
+              <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control form-group"
+              placeholder="senha"
+              required
+              autofocus
+            />
               <button
                 class="btn btn-lg btn-primary btn-block btn-signin"
                 type="submit"

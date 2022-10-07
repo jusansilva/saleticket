@@ -1,5 +1,8 @@
+var localStorage = require('store')
+
+
 const middlewareValidarJWT = (req, res, next) => {
-  const jwt = req.headers["authorization"];
+  const jwt = req.headers["authorization"] || localStorage.get("token");
   const chavePrivada = "sandevcode";
   console.log(jwt)
   if (!jwt) {
